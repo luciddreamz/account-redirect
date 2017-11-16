@@ -1,3 +1,6 @@
 Options +FollowSymLinks
 RewriteEngine on
+<If "%{HTTP_HOST} =~ /manage\.free-stg\.openshift/">
+  RewriteRule (.*) https://manage.stg.openshift.com/ [R=301,L]
+</If>
 RewriteRule (.*) https://manage.openshift.com/ [R=301,L]
